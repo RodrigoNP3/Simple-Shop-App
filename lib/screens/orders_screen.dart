@@ -21,7 +21,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   void initState() {
     _ordersFuture = _obtainFordersFuture();
-    print('ROLA ROLA ROLA${_ordersFuture}');
+
     super.initState();
   }
 
@@ -49,7 +49,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
                   builder: (ctx, orderData, child) => ListView.builder(
                     itemCount: orderData.orders.length,
                     itemBuilder: (ctx, i) {
-                      print('rola rola ${orderData.orders[i].products}');
                       return OrderItem(orderData.orders[i]);
                     },
                   ),

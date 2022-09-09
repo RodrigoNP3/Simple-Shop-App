@@ -39,6 +39,7 @@ class Orders with ChangeNotifier {
     if (extractedData == null) {
       return;
     }
+    // print(extractedData);
     extractedData.forEach((orderId, orderData) {
       loadedOrders.add(
         OrderItem(
@@ -46,8 +47,7 @@ class Orders with ChangeNotifier {
           amount: orderData['amount'],
           dateTime: DateTime.parse(orderData['dateTime']),
           products: (orderData['products'] as List<dynamic>).map((item) {
-            //print(orderData['products'][2]['title']);
-            CartItem(
+            return CartItem(
               id: item['id'],
               title: item['title'],
               quantity: item['quantity'],
@@ -56,6 +56,7 @@ class Orders with ChangeNotifier {
           }).toList(),
         ),
       );
+      print(loadedOrders);
     });
     _orders = loadedOrders.reversed.toList();
     print('ROLINHA ${_orders[0].products}');

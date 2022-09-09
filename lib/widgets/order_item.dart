@@ -16,7 +16,6 @@ class _OrderItemState extends State<OrderItem> {
   var _expanded = false;
   @override
   Widget build(BuildContext context) {
-    print(widget.order.products[0]);
     return AnimatedContainer(
       duration: Duration(milliseconds: 200),
       height: _expanded ? (widget.order.products.length * 25.0) + 95 : 95,
@@ -55,14 +54,14 @@ class _OrderItemState extends State<OrderItem> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              widget.order.products.toString(),
+                              prod.title.toString(),
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              'Rola', //'${prod.quantity}x \$${prod.price}',
+                              '${prod.quantity}x \$${prod.price}',
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.grey,
