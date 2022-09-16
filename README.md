@@ -1,4 +1,4 @@
-# Great Places App
+# Simple Shop App
 
 Hello there!
 This is a simple shop app developed in flutter.
